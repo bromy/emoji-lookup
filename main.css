@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+}
+
+.search-bar {
+  border: 5px solid #333;
+  border-radius: 20px;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: lowercase;
+  width: 100%;
+}
+
+.search-bar:focus {
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  width: 100%;
+  grid-gap: 1rem;
+  overflow: auto;
+}
+
+.result {
+  border: 5px solid #333;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.result > * {
+  pointer-events: none;
+}
+
+.emoji {
+  border-bottom: 5px solid;
+  padding: .5rem;
+}
+
+.emoji-name {
+  font-size: .75rem;
+  padding: .5rem;
+  align-items: center;
+  flex: auto;
+  justify-content: center;
+  display: flex;
+}
+
+.copy-field {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
