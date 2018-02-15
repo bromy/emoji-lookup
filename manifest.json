@@ -1,6 +1,6 @@
 {
-  "name": "Right Pointing Magnifying Glass",
-  "short_name": "🔎 Search",
+  "name": "Emoji Lookup",
+  "short_name": "Emoji Lookup",
   "description": "An emoji search app.",
   "start_url": "/",
   "display": "standalone",

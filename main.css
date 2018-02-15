@@ -10,6 +10,7 @@ body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
   height: 100%;
+  line-height: 1;
   margin: 0;
 }
 
@@ -79,6 +80,22 @@ h1 {
   flex: auto;
   justify-content: center;
   display: flex;
+}
+
+.notification {
+  position: fixed;
+  bottom: -65px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 5px solid #333;
+  font-weight: bold;
+  text-align: center;
+  transition: bottom .3s;
+}
+
+.notification.active {
+  bottom: 0;
 }
 
 .copy-field {

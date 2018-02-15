@@ -1,22 +1,18 @@
 {
-  "name": "right-pointing-magnifying-glass",
+  "name": "emoji-lookup",
   "version": "1.0.0",
   "description": "Offline-capable emoji search web app",
-  "main": "main.js",
   "scripts": {
     "copy-files": "cp sw.js dist/sw.js && cp icon-256x256.png dist/icon-256x256.png && cp manifest.json dist/manifest.json",
-    "build": "parcel build index.html --public-url ./ && node parcel-patcher.js && npm run copy-files"
+    "build": "parcel build index.html --public-url ./ && node parcel-patcher.js && npm run copy-files",
+    "start-dev": "http-server . -o"
   },
-  "keywords": [
-    "emoji",
-    "search",
-    "offline"
-  ],
   "author": "bromy",
   "license": "ISC",
   "dependencies": {
     "emojilib": "^2.2.12"
   },
   "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }

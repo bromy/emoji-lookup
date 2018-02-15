@@ -5,7 +5,10 @@ let $searchBar = document.querySelector('.search-bar')
 let $results = document.querySelector('.results')
 let $resultTemplate = document.querySelector('.result-template')
 let $copyField = document.querySelector('.copy-field')
+let $notification = document.querySelector('.notification')
+let $notificationEmoji = document.querySelector('.notification-emoji')
 let emojis = []
+let notificationTimeout
 let typingTimeout
 
 for (let emoji in emojilib) {
@@ -27,7 +30,7 @@ $searchBar.addEventListener('input', event => {
 
   clearTimeout(typingTimeout)
 
-  typingTimeout = setTimeout( () => {
+  typingTimeout = window.setTimeout( () => {
     // clear results
     $results.innerHTML = ''
 
@@ -48,17 +51,26 @@ $searchBar.addEventListener('input', event => {
 
 // handle click on result
 $results.addEventListener('click', event => {
-  if(event.target && event.target.matches('.result')) {
+  if (event.target && event.target.matches('.result')) {
     let emojiText = event.target.querySelector('.emoji').innerText
     let range = document.createRange()
 
     $copyField.value = emojiText
     $copyField.select()
 
-    document.execCommand('copy') ? alert(`copied ${emojiText} to clipboard!`) : alert (`couldn't copy to clipboard!`)
+    document.execCommand('copy')
+
+    $notificationEmoji.textContent = emojiText
+    $notification.classList.add('active')
+
+    window.clearTimeout(notificationTimeout)
+
+    notificationTimeout = window.setTimeout( () => {
+        $notification.classList.remove('active')
+    }, 900)
 
     $copyField.blur()
-	}
+  }
 })
 
 // register service worker
