@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "description": "Offline-capable emoji search web app",
   "scripts": {
-    "copy-files": "cp sw.js dist/sw.js && cp icon-256x256.png dist/icon-256x256.png && cp manifest.json dist/manifest.json",
-    "build": "parcel build index.html --public-url ./ && node parcel-patcher.js && npm run copy-files",
+    "start": "serve ./dist",
     "start-dev": "http-server . -o"
   },
   "author": "bromy",
-  "license": "ISC",
   "dependencies": {
+    "serve": "latest",
     "emojilib": "^2.2.12"
   },
   "devDependencies": {
     "http-server": "^0.11.1"
+  },
+  "now": {
+    "alias": "emoji-lookup",
+    "type": "static",
+    "files": [
+      "dist"
+    ]
   }
 }

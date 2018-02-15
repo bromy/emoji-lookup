@@ -64,6 +64,10 @@ h1 {
   flex-direction: column;
 }
 
+.result:hover {
+  background-color: #eee;
+}
+
 .result > * {
   pointer-events: none;
 }
