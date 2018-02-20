@@ -20,6 +20,8 @@ main {
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  margin: auto;
+  max-width: 777px;
   padding: 1rem;
 }
 
