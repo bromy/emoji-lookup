@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "Offline-capable emoji search web app",
   "scripts": {
-    "start": "serve ./dist",
-    "start-dev": "http-server . -o"
+    "start": "serve ."
   },
   "author": "bromy",
-  "dependencies": {
+  "devDependencies": {
     "serve": "latest",
     "emojilib": "^2.2.12"
   },
-  "devDependencies": {
-    "http-server": "^0.11.1"
-  },
   "now": {
     "alias": "emoji-lookup",
-    "type": "static",
     "files": [
-      "dist"
-    ]
+      "icon.png",
+      "index.html",
+      "main.css",
+      "main.js",
+      "manifest.json",
+      "sw.js"
+    ],
+    "type": "static"
   }
 }
