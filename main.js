@@ -20,8 +20,6 @@ for (let emoji in emojilib) {
   })
 }
 
-console.log(emojis)
-
 // handle input into search bar
 $searchBar.addEventListener('input', event => {
   let val = event.target.value.toLowerCase()
@@ -43,7 +41,7 @@ $searchBar.addEventListener('input', event => {
 
       $results.appendChild($result)
     })
-  }, 300)
+  }, 100)
 })
 
 // handle click on result
