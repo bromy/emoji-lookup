@@ -1,7 +1,7 @@
 {
   "name": "Emoji Lookup",
-  "short_name": "Emoji Lookup",
-  "description": "An emoji search app.",
+  "short_name": "😀 Lookup",
+  "description": "An emoji lookup app.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
@@ -9,7 +9,7 @@
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "256x256",
+      "sizes": "160x160",
       "type": "image/png"
     }
   ]
