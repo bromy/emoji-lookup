@@ -20,6 +20,9 @@ for (let emoji in emojilib) {
   })
 }
 
+// reset search bar
+$searchBar.value = ''
+
 // handle input into search bar
 $searchBar.addEventListener('input', event => {
   let val = event.target.value.toLowerCase()
@@ -36,7 +39,7 @@ $searchBar.addEventListener('input', event => {
     filteredEmojis.forEach( emoji => {
       let $result = $resultTemplate.content.cloneNode(true)
 
-      $result.querySelector('.emoji').innerText = emoji.char
+      $result.querySelector('.emoji-char').innerText = emoji.char
       $result.querySelector('.emoji-name').innerText = emoji.name
 
       $results.appendChild($result)
@@ -46,8 +49,8 @@ $searchBar.addEventListener('input', event => {
 
 // handle click on result
 $results.addEventListener('click', event => {
-  if (event.target && event.target.matches('.result')) {
-    let emojiText = event.target.querySelector('.emoji').innerText
+  if (event.target && event.target.matches('.emoji')) {
+    let emojiText = event.target.querySelector('.emoji-char').innerText
     let range = document.createRange()
 
     $copyField.value = emojiText

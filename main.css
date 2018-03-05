@@ -9,6 +9,7 @@ html {
 body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
   height: 100%;
   line-height: 1;
   margin: 0;
@@ -22,29 +23,27 @@ main {
   justify-content: center;
   margin: auto;
   max-width: 777px;
-  padding: 1rem;
 }
 
 h1 {
-  margin: 0 0 1rem 0;
+  margin: 2rem;
 }
 
 .search-bar {
   border: 5px solid #333;
-  border-radius: 20px;
+  border-radius: 30px;
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   text-align: center;
   text-transform: lowercase;
-  width: 100%;
+  width: calc(100% - 2rem);
 }
 
 .search-bar:focus {
-  margin-bottom: 1rem;
   outline: none;
 }
 
@@ -54,38 +53,55 @@ h1 {
   width: 100%;
   grid-gap: 1rem;
   overflow: auto;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .result {
-  border: 5px solid #333;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-.result:hover {
-  background-color: #eee;
-}
-
-.result > * {
+.emoji > * {
   pointer-events: none;
 }
 
 .emoji {
-  border-bottom: 5px solid;
-  padding: .5rem;
+  border: 5px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+.emoji:hover {
+  background-color: #eee;
+}
+
+.emoji:active {
+  background-color: #ddd;
+}
+
+.emoji::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.emoji-char {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .emoji-name {
-  font-size: .75rem;
-  padding: .5rem;
-  align-items: center;
-  flex: auto;
-  justify-content: center;
-  display: flex;
+  line-height: 1.2;
 }
 
 .notification {
@@ -95,7 +111,6 @@ h1 {
   padding: 20px;
   background-color: #fff;
   border-top: 5px solid #333;
-  font-weight: bold;
   text-align: center;
   transition: bottom .3s;
 }
