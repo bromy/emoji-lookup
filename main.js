@@ -51,7 +51,7 @@ $searchBar.addEventListener('input', event => {
     })
 
     $results.innerHTML = resultsHTML
-  }, 100)
+  }, 300)
 })
 
 // handle click on result
