@@ -30,20 +30,27 @@ $searchBar.addEventListener('input', event => {
   clearTimeout(typingTimeout)
 
   typingTimeout = window.setTimeout( () => {
-    $results.innerHTML = ''
+    let resultsHTML = ''
 
-    if (val === '') return
+    if (val === '') {
+      $results.innerHTML = resultsHTML
+
+      return
+    }
 
     let filteredEmojis = emojis.filter(emoji => emoji.keywords.includes(val))
 
-    filteredEmojis.forEach( emoji => {
-      let $result = $resultTemplate.content.cloneNode(true)
-
-      $result.querySelector('.emoji-char').innerText = emoji.char
-      $result.querySelector('.emoji-name').innerText = emoji.name
-
-      $results.appendChild($result)
+    filteredEmojis.forEach(emoji => {
+      resultsHTML +=
+        `<div class="result">
+          <div class="emoji">
+            <div class="emoji-char">${emoji.char}</div>
+          </div>
+          <div class="emoji-name">${emoji.name}</div>
+        </div>`
     })
+
+    $results.innerHTML = resultsHTML
   }, 100)
 })
 
