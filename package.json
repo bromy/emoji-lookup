@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Offline-capable emoji search web app",
   "scripts": {
-    "start": "serve ."
+    "start": "serve .",
+    "deploy": "now; now alias emoji-lookup.bromy.co"
   },
   "author": "bromy",
   "devDependencies": {
